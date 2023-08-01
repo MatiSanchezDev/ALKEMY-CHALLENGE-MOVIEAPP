@@ -47,8 +47,8 @@ export const Home = () => {
               </SiThemoviedatabase>
             </div>
             <h1 className="max-w-5xl text-2xl font-bold leading-none tracking-tighter text-green-500 md:text-5xl lg:text-6xl lg:max-w-7xl hover:saturate-150">
-              Buscá tu pelicula favorita <br class="hidden lg:block" />y mirá su
-              valoración!
+              Buscá tu pelicula favorita <br className="hidden lg:block" />y
+              mirá su valoración!
             </h1>
 
             <p className="max-w-xl mx-auto mt-8 text-base leading-relaxed text-center text-gray-500">

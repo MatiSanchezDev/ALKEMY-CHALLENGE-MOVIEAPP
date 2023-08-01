@@ -4,7 +4,8 @@ import Swal from "sweetalert2";
 
 export const Login = () => {
   const navigate = useNavigate();
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
@@ -28,13 +29,10 @@ export const Login = () => {
       return;
     }
     Swal.fire("Logueado", "Te estas redirigiendo al Home", "success");
-    axios
-      .post("http://challenge-react.alkemy.org/", { email, password })
-      .then((res) => {
-        const tokenAuth = res.data.token;
-        sessionStorage.setItem("token", tokenAuth);
-        navigate("/home");
-      });
+    const tokenAuth =
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiZW1haWwiOiJjaGFsbGVuZ2VAYWxrZW15Lm9yZyIsImlhdCI6MTUxNjIzOTAyMn0.ilhFPrG0y7olRHifbjvcMOlH7q2YwlegT0f4aSbryBE";
+    sessionStorage.setItem("token", tokenAuth);
+    navigate("/home");
   };
 
   return (
@@ -59,18 +57,20 @@ export const Login = () => {
               type="email"
               id="email"
               name="email"
+              value='challenge@alkemy.org'
               placeholder="Email"
               className="w-full bg-gray-800 rounded border border-gray-700 focus:border-green-500 focus:ring-2 focus:ring-green-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />
           </div>
           <div className="relative mb-4">
-            <label type="name" className="leading-7 text-sm text-gray-400">
+            <label  type="name" className="leading-7 text-sm text-gray-400">
               Password:
             </label>
             <input
               type="password"
               id="password"
               name="password"
+              value='react'
               placeholder="Password"
               className="w-full bg-gray-800 rounded border border-gray-700 focus:border-green-500 focus:ring-2 focus:ring-green-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />

@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import { FaBars } from "react-icons/fa";
 import { BsFillSearchHeartFill } from "react-icons/bs";
 import { IoCloseSharp } from "react-icons/io5";
+import { HeaderPeliculas } from "./HeaderPeliculas";
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -59,8 +60,8 @@ export const Header = () => {
               <li className=" hover:border-b-2 border-green-500 ease-in duration-80">
                 <Link to={"/home"}>Home</Link>
               </li>
-              <li className=" hover:border-b-2 border-green-500 ease-in duration-80">
-                <Link to={"/peliculas"}>Peliculas</Link>
+              <li>
+                <HeaderPeliculas />
               </li>
               <li className=" hover:border-b-2 border-green-500 ease-in duration-80">
                 <Link to={"/favoritos"}>Favoritos</Link>

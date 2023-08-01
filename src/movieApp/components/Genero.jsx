@@ -8,7 +8,6 @@ export const Genero = ({ addOrRemoveFavs }) => {
   const params = useParams();
   const { genre } = params;
   const [genres, setGenres] = useState([]);
-  console.log(genre);
 
   const rating = (rate) => {
     if (rate > 8 && rate <= 10)
@@ -51,7 +50,7 @@ export const Genero = ({ addOrRemoveFavs }) => {
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt="img"
             />
-            <button className="absolute flex items-center justify-center w-8 h-8 top-2 right-2 bg-white rounded-full hover:bg-green-300">
+            <button onClick={addOrRemoveFavs} className="absolute flex items-center justify-center w-8 h-8 top-2 right-2 bg-white rounded-full hover:bg-green-300">
               <FcLike size={22} />
               {/* <FcDislike size={22} /> */}
             </button>
