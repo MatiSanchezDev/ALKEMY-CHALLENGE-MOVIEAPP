@@ -76,7 +76,7 @@ export const Login = () => {
             />
           </div>
           <button className="text-white mt-4 bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">
-            Button
+            Login
           </button>
           <p className="text-xs text-green-500  text-opacity-90 mt-3">
             Introduzca de email: "challenge@alkemy.org"
