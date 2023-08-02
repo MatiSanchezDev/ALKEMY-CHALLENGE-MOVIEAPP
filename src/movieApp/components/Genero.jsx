@@ -50,7 +50,8 @@ export const Genero = ({ addOrRemoveFavs }) => {
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt="img"
             />
-            <button onClick={addOrRemoveFavs} className="absolute flex items-center justify-center w-8 h-8 top-2 right-2 bg-white rounded-full hover:bg-green-300">
+            <button onClick={addOrRemoveFavs} data-movie-id={movie.id}
+            data-movie-rate={movie.vote_average} className="absolute flex items-center justify-center w-8 h-8 top-2 right-2 bg-white rounded-full hover:bg-green-300">
               <FcLike size={22} />
               {/* <FcDislike size={22} /> */}
             </button>
